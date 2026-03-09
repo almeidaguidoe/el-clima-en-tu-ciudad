@@ -1,0 +1,165 @@
+.goldman-regular {
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.goldman-bold {
+  font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #b2bfec;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding: min(2rem, 4%);  
+}
+
+h1 {
+  font-family: "Goldman", sans-serif;
+  color: #710d7e;
+  font-size: clamp(3rem, 3rem + 2vw, 8rem);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#container {
+  background-color: #084b83;
+  padding: min(1rem, 2%);
+  border-radius: 20px;
+  display: none;
+  flex-direction: row;
+
+  font-family: "Goldman", sans-serif;
+  color: #fff;
+  font-size: clamp(1rem, 1rem + 1vw, 3rem);
+
+}
+
+.bloque {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.grupo-bloque {
+  display: flex;
+  gap: 1rem;
+}
+
+.information-container {
+  padding: 1rem;
+}
+
+
+
+.grupo-clima-actual {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  background: #a6eeee;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: min(1rem, 4%);
+
+  color: #084B83;
+}
+
+.img_clima-actual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translate(-25%, -25%);
+}
+
+#description {
+  z-index: 10;
+}
+
+
+/* --------- SPINNER ---------- */
+
+.loader {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #084B83 #084B83 transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF66B3 #FF66B3;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 8rem;
+  height: 8rem;
+  border-color: #084B83 #084B83 transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+    
+@media (max-width: 460px){
+  body {
+    height: auto;
+  }
+  #container{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .grupo-clima-actual {
+    height: 10rem;
+    flex: none;
+  }
+}

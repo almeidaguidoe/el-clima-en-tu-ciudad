@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/3b60c42785.js" crossorigin="anonymous"></script>
+
+    <!-- ICONO DE LA PÁGINA -->
+    <link rel="icon" type="image/x-icon" href="./img/icono.ico">
+    
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="index.js" defer></script>
+
+    <title>Clima en tu lugar</title>
+</head>
+<body onload="onLoad()">
+    <h1>El clima en tu lugar</h1>
+    <div id="container">
+        <div class="bloque">
+            <div class="grupo-bloque">
+                <i class="fa-solid fa-location-dot"></i>
+                <div id="location"></div>
+            </div>
+            <div class="grupo-bloque">
+                <i class="fa-regular fa-calendar-days"></i>
+                <div id="date"></div>
+            </div>
+            <div class="grupo-clima-actual">
+                <img class="img_clima-actual" src="./img/Despejado.png">
+                <div id="description"></div>
+            </div>
+            
+        </div>
+        <div class="bloque">
+            <div class="information-container">
+                <span>Temperatura</span>
+                <div id="temperature"></div>
+            </div>
+            <div class="information-container">
+                <span>Humedad</span>
+                <div id="humidity"></div>
+            </div>
+            <div class="information-container">
+                <span>Viento</span>
+                <div id="viento"></div>
+            </div>
+        </div>
+        
+        
+
+    </div>
+
+    <span class="loader"></span>
+    
+</body>
+</html>
